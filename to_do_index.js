@@ -14,7 +14,7 @@ createTask_btn.addEventListener("clik")
 
     console.log ("hello")
 
-    const task_obj = (taskTxt: taskt_indput.value, )
+    const task_obj => (taskTxt: taskt_indput.value, );
 }
 
 
