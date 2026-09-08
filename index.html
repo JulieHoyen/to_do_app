@@ -1,31 +1,113 @@
 <!doctype html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="to_do.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
-    <script src="vejr.js" defer></script>
-    <title>To do app</title>
+
+    <title>To Do-app</title>
   </head>
+
   <body>
     <main class="app">
-      <hero class="hero">
-        <h1>Få styr på dit renegade liv</h1>
-      </hero>
+      <!-- Appens overskrift -->
+      <header class="hero">
+        <img src="todo-logo.svg" alt="To Do-logo" />
+        <h1>Få styr på dit<br />renegade liv</h1>
+      </header>
 
-      <input type="text" class="task_text" />
-      <button class="create_task button">Lav en task</button>
+      <!-- Formular til en ny opgave -->
+      <section class="new-task-section">
+        <form id="task-form" class="task-form">
+          <input id="task-text" class="task_text" type="text" placeholder="Skriv hvilken opgave du skal have udført her" aria-label="Ny opgave" />
 
-      <ul class="tasks"></ul>
+          <div class="task-options">
+            <input id="task-date" type="date" value="2026-09-10" aria-label="Opgavens dato" />
+
+            <label class="option">
+              <span>Indendørs</span>
+              <input type="radio" name="task-location" value="indoor" checked />
+            </label>
+
+            <label class="option">
+              <span>Udendørs</span>
+              <input id="task-outdoor" type="radio" name="task-location" value="outdoor" />
+            </label>
+          </div>
+
+          <!-- Knappen venter på din JavaScript. -->
+          <button class="create_task button" type="button">Tilføj opgave</button>
+        </form>
+
+        <!-- Her kan JavaScript senere vise fejl og andre beskeder. -->
+        <p id="feedback"></p>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Aktive opgaver -->
+      <section class="task-section todo-section">
+        <h2>To do</h2>
+
+        <ul id="todo-list" class="tasks task-list">
+          <li class="task">
+            <div>
+              <h3>Tag opvasken</h3>
+              <p>15. september <span class="sun">Sol</span></p>
+            </div>
+            <input type="checkbox" aria-label="Markér Tag opvasken som færdig" />
+          </li>
+
+          <li class="task">
+            <div>
+              <h3>Hæng vasketøj op</h3>
+              <p>15. september <span class="weather">Let skyet</span></p>
+            </div>
+            <input type="checkbox" aria-label="Markér Hæng vasketøj op som færdig" />
+          </li>
+
+          <li class="task">
+            <div>
+              <h3>Slå græsset</h3>
+              <p>10. september <span class="sun">Sol</span></p>
+            </div>
+            <input type="checkbox" aria-label="Markér Slå græsset som færdig" />
+          </li>
+        </ul>
+      </section>
+
+      <!-- Færdige opgaver -->
+      <section class="task-section done-section">
+        <h2>Done</h2>
+
+        <ul id="done-list" class="task-list done-list">
+          <li class="task done-task">
+            <h3>Tag opvasken</h3>
+            <input type="checkbox" checked aria-label="Tag opvasken er færdig" />
+          </li>
+
+          <li class="task done-task">
+            <h3>Vask tøj</h3>
+            <input type="checkbox" checked aria-label="Vask tøj er færdig" />
+          </li>
+
+          <li class="task done-task">
+            <h3>Køb vaskemiddel ind</h3>
+            <input type="checkbox" checked aria-label="Køb vaskemiddel ind er færdig" />
+          </li>
+        </ul>
+      </section>
     </main>
-
-    <div class="hidden">
-      <p>SAMLET JAVASCRIPT TIL TODO-APPEN Din HTML skal indeholde elementer med disse id'er: #task-form Formularen #task-text Tekstfeltet til opgaven #task-date Datovælgeren #task-outdoor Checkboxen "Udendørs" #todo-list Listen med aktive opgaver #done-list Listen med færdige opgaver #feedback Området til beskeder Forbind filen nederst i din HTML:</p>
-    </div>
   </body>
 </html>
+
+<div class="hidden">
+  <p>SAMLET JAVASCRIPT TIL TODO-APPEN Din HTML skal indeholde elementer med disse id'er: #task-form Formularen #task-text Tekstfeltet til opgaven #task-date Datovælgeren #task-outdoor Checkboxen "Udendørs" #todo-list Listen med aktive opgaver #done-list Listen med færdige opgaver #feedback Området til beskeder Forbind filen nederst i din HTML:</p>
+</div>
