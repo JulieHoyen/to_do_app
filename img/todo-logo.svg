@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 640 180" role="img" aria-labelledby="title description">
+  <title id="title">To Do-logo</title>
+  <desc id="description">Et symmetrisk grønt og lyserødt To Do-logo i neonstreg.</desc>
+
+  <!-- Perfekt cirkel med ensartet streg -->
+  <circle cx="90" cy="90" r="64" stroke="#ff5fac" stroke-width="8"/>
+
+  <!-- To ens tjekliste-rækker, centreret i cirklen -->
+  <g stroke="#167a55" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 69l10 10 17-21"/>
+    <path d="M91 70h35"/>
+    <path d="M52 108l10 10 17-21"/>
+    <path d="M91 109h35"/>
+  </g>
+
+  <text x="183" y="121" fill="#167a55"
+    font-family="'Bagel Fat One', 'Arial Rounded MT Bold', sans-serif"
+    font-size="104" font-weight="700" letter-spacing="2">TO</text>
+  <text x="350" y="121" fill="#ff5fac"
+    font-family="'Bagel Fat One', 'Arial Rounded MT Bold', sans-serif"
+    font-size="104" font-weight="700" letter-spacing="2">DO</text>
+
+  <path d="M190 146H540" stroke="#ff5fac" stroke-width="6" stroke-linecap="round"/>
+</svg>

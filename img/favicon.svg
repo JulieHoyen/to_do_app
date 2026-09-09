@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">To Do-favicon</title>
+
+  <!-- Perfekt centreret cirkel -->
+  <circle cx="32" cy="32" r="27" stroke="#ff5fac" stroke-width="4.5"/>
+
+  <!-- Centreret tjekmærke -->
+  <path d="M18 32l9 9 20-23"
+    stroke="#167a55" stroke-width="6"
+    stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -5,6 +5,7 @@
   --secondary-bg: #efa5e4;
   --button-color: #db269d;
   --text-color: #111111;
+  ---secondary-accent: #ad449d;
 }
 
 /* Gælder for alle elementer på siden. */
@@ -68,10 +69,44 @@ input[type="date"]:focus {
 }
 
 /* Beholder browserens normale input, men giver dem den pink farve. */
-input[type="checkbox"],
+/* input[type="checkbox"],
 input[type="radio"] {
   accent-color: #db269d;
   cursor: pointer;
+} */
+.task input[type="checkbox"] {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  background-image: url("./img/unchecked.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.task input[type="checkbox"]:checked {
+  background-image: url("./img/checked.svg");
+}
+
+/* steg gennem de opgaver på done listen*/
+li.checked .task_content {
+  color: #555;
+  text-decoration: line-through;
+}
+
+/********* indefor / udenfor iconer**********/
+.task_info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task_location_icon {
+  width: 28px;
+  height: 28px;
 }
 
 .button {
@@ -86,6 +121,32 @@ input[type="radio"] {
 
 .button:hover {
   background-color: #b91d82;
+}
+
+/****** slet knap ****/
+.delete_task {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--button-color);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
+}
+
+.delete_task:hover {
+  background-color: var(--secondary-accent);
+  transform: scale(1.05);
+}
+
+.delete_task:focus-visible {
+  outline: 3px solid var(--text-color);
+  outline-offset: 2px;
 }
 
 /* Senere kan JS udskifte disse tekster med API-data. */
