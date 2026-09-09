@@ -2,7 +2,7 @@
   --background: #bff3e0;
   --primary-bg: #4caf98;
   --primary-accent: #87cebe;
-  --secondary-bg: #efa5e4;
+  --secondary-bg: #f0d4eb;
   --button-color: #db269d;
   --text-color: #111111;
   ---secondary-accent: #ad449d;
@@ -69,11 +69,12 @@ input[type="date"]:focus {
 }
 
 /* Beholder browserens normale input, men giver dem den pink farve. */
-/* input[type="checkbox"],
+input[type="checkbox"],
 input[type="radio"] {
   accent-color: #db269d;
   cursor: pointer;
-} */
+}
+
 .task input[type="checkbox"] {
   appearance: none;
   width: 28px;

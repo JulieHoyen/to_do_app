@@ -103,7 +103,7 @@ header img {
 
 .todo-section {
   min-height: 395px;
-  background-color: #efa5e4;
+  background-color: var(--secondary-bg);
 }
 
 .done-section {
