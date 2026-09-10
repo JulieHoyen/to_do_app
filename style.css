@@ -2,10 +2,11 @@
   --background: #bff3e0;
   --primary-bg: #4caf98;
   --primary-accent: #87cebe;
-  --secondary-bg: #f0d4eb;
+  --secondary-bg: #e8bfe0;
   --button-color: #db269d;
   --text-color: #111111;
-  ---secondary-accent: #ad449d;
+  --secondary-accent: #ad449d;
+  --text-color-secondary: #51113f;
 }
 
 /* Gælder for alle elementer på siden. */
@@ -30,6 +31,12 @@ body {
   margin: 0 auto;
   padding: 12px;
   background-color: #c2f3e2;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-style: italic;
 }
 
 h1,
@@ -59,19 +66,19 @@ input[type="text"],
 input[type="date"] {
   border: none;
   outline: none;
-  background-color: #87cebe;
-  color: #315b53;
+  background-color: var(--primary-accent);
+  color: var(--text-color);
 }
 
 input[type="text"]:focus,
 input[type="date"]:focus {
-  outline: 3px solid #6d2357;
+  outline: 3px solid var(--text-color-secondary);
 }
 
 /* Beholder browserens normale input, men giver dem den pink farve. */
 input[type="checkbox"],
 input[type="radio"] {
-  accent-color: #db269d;
+  accent-color: var(--button-color);
   cursor: pointer;
 }
 
@@ -106,22 +113,40 @@ li.checked .task_content {
 }
 
 .task_location_icon {
-  width: 28px;
-  height: 28px;
+  /* Gør hele ikonfeltet større. */
+  width: 48px;
+  height: 48px;
+
+  /* Skaber luft mellem ikonet og baggrunden. */
+  padding: 7px;
+
+  /* Skubber ikonet helt ud til højre. */
+  margin-left: auto;
+  flex-shrink: 0;
+
+  /* Sørger for, at billedet bevarer sine proportioner. */
+  object-fit: contain;
+
+  /* Giver ikonet en lys, rund baggrund. */
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+
+  /* Giver en blød skygge omkring ikonfeltet. */
+  box-shadow: 0 4px 10px rgba(17, 17, 17, 0.18);
 }
 
 .button {
   padding: 7px 35px;
   border: none;
   border-radius: 30px;
-  background-color: #db269d;
+  background-color: var(--button-color);
   color: white;
   font-weight: 600;
   cursor: pointer;
 }
 
 .button:hover {
-  background-color: #b91d82;
+  background-color: var(--secondary-accent);
 }
 
 /****** slet knap ****/

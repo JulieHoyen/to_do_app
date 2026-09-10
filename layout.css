@@ -13,10 +13,7 @@
   padding: 12px 25px;
   border-radius: 50px;
   background-color: var(--secondary-bg);
-  color: #51113f;
-  font-family: "Playfair Display", serif;
-  font-size: 32px;
-  font-style: italic;
+  color: var(--text-color-secondary);
   font-weight: 500;
   line-height: 1;
   text-align: center;
@@ -73,7 +70,7 @@ header img {
   gap: 5px;
   padding: 0 8px;
   background-color: var(--primary-accent);
-  color: #315b53;
+  color: var(--text-color);
   font-size: 11px;
   font-weight: 600;
 }
@@ -96,7 +93,7 @@ header img {
   align-items: center;
   justify-content: center;
 }
-s #feedback {
+#feedback {
   min-height: 20px;
   margin: 4px 0 0;
   color: var(--text-color);
@@ -195,4 +192,19 @@ s #feedback {
   #task-date {
     grid-column: 1 / 3;
   }
+}
+
+/*******  vejer info *******/
+.task_unavailable {
+  padding: 10px;
+  border: 2px dashed #6d2357;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+.weather_warning {
+  margin-top: 5px;
+  color: #6d2357;
+  font-size: 11px;
+  font-weight: 700;
 }

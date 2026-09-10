@@ -1,15 +1,21 @@
 import { loadJSON } from "./outdoor_pakke/utils_lib/utils_lib.js";
 
 export function getWeather(date, callback) {
-  loadJSON(`https://api.open-meteo.com/v1/forecast?latitude=55.68&longitude=12.57&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=${date}&end_date=${date}`, callback);
+  loadJSON(`https://api.open-meteo.com/v1/forecast?latitude=55.68&longitude=12.57&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=${date}&end_date=${date}`, callback, dataLoaded);
+  // loadJSON henter dataene og sender dem videre til callback-funktionen.
 }
 
 function dataLoaded(data) {
   console.log("DATA", data);
   console.log(`WEATHER KODE for dagen: ${Date(data.daily.time[0])} VMO kode: ${data.daily.weathercode[0]}`);
+  //const weatherCode = data.daily.weathercode[0];
+  const weatherCode = 63;
+  const icon = wwCodes[weatherCode];
+  console.log(`${icon}`);
+  console.log(`${weatherCode}`);
 }
-/to_do_app/weather_open_meteo.js;
-const wwCodes = {
+
+export const wwCodes = {
   0: "clearsky_day.png",
   1: "fair_day.png",
   2: "partlycloudy_day.png",
