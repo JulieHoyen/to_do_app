@@ -147,17 +147,18 @@ function renderList() {
     if (task.taskUnavailable === true) {
       weatherMessage = `
     <p class="weather_warning">
-      Vejret er for dårligt til at lave denne opgave. Bliv indenfor og spille PlayStation! &#x1F60E;
-    </p>
-  `;
-    } else {
-      task.taskUnavailable === false;
-      weatherMessage = `
-    <p class="weather_warning">
-      Vejret er godt nok til denne opagve. Men du burde blive indenfor og spille PlayStation! &#x1F60D;
+      Vejret er for dårligt til at lave denne opgave. Bliv heller indenfor og spil PlayStation! &#x1F60E;
     </p>
   `;
     }
+    // else {
+    //     task.taskUnavailable === false;
+    //     weatherMessage = `
+    //   <p class="weather_warning">
+    //     Vejret er godt nok til denne opagve. Men du burde blive indenfor og spille PlayStation! &#x1F60D;
+    //   </p>
+    // `;
+    //   }
 
     // Henter det rigtige ikon til denne opgave.
     const taskIcon = getTaskIcon(task);
