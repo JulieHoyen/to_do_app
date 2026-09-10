@@ -154,7 +154,7 @@ function renderList() {
       task.taskUnavailable === false;
       weatherMessage = `
     <p class="weather_warning">
-      Vejret er godt nok til denne opagve. Men du burde blive indenfor og spil PlayStation! &#x1F60D;
+      Vejret er godt nok til denne opagve. Men du burde blive indenfor og spille PlayStation! &#x1F60D;
     </p>
   `;
     }
