@@ -1,14 +1,14 @@
-import { loadJSON } from "../utils_lib/utils_lib.js";
-loadJSON(
-  "https://api.open-meteo.com/v1/forecast?latitude=55.68&longitude=12.57&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=2026-09-09&end_date=2026-09-09",
-  dataLoaded,
-);
+import { loadJSON } from "./outdoor_pakke/utils_lib/utils_lib.js";
+
+export function getWeather(date, callback) {
+  loadJSON(`https://api.open-meteo.com/v1/forecast?latitude=55.68&longitude=12.57&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=${date}&end_date=${date}`, callback);
+}
 
 function dataLoaded(data) {
   console.log("DATA", data);
-  console.log(`WEATHER KODE for dagen: ${Date(data.daily.time)} VMO kode: ${data.daily.weathercode[0]}`);
+  console.log(`WEATHER KODE for dagen: ${Date(data.daily.time[0])} VMO kode: ${data.daily.weathercode[0]}`);
 }
-
+/to_do_app/weather_open_meteo.js;
 const wwCodes = {
   0: "clearsky_day.png",
   1: "fair_day.png",

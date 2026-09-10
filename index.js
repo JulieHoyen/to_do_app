@@ -1,4 +1,5 @@
 "use strict";
+import { getWeather } from "./weather_open_meteoweather_open_meteo";
 
 // <button class="create_task"></button>
 // <input type="text" class="task_text" />
@@ -9,23 +10,45 @@ const ul_elm = document.querySelector(".tasks");
 const done_ul_elm = document.querySelector("#done-list");
 const task_date = document.querySelector("#task-date");
 const task_outdoor = document.querySelector("#task-outdoor");
+const feedback = document.querySelector("#feedback");
 const task_arr = [];
 const done_arr = [];
 
+//*************************** Opretter opagver **************//
 createTask_btn.addEventListener("click", createTask);
 
 function createTask() {
+  // Fjerner mellemrum før og efter teksten.
+  const taskText = task_input.value.trim();
+
+  // Stopper funktionen, hvis tekstfeltet er tomt.
+  if (taskText === "") {
+    feedback.textContent = "Du skal skrive en opgave først.";
+    task_input.focus();
+    return;
+  }
+
+  // Stopper funktionen, hvis der ikke er valgt en dato.
+  if (task_date.value === "") {
+    feedback.textContent = "Du skal vælge en dato.";
+    task_date.focus();
+    return;
+  }
+
   const task_obj = {
-    taskTxt: task_input.value,
+    taskTxt: taskText,
     taskDate: task_date.value,
     taskOutdoor: task_outdoor.checked,
     taskDone: false,
-    id: self.crypto.randomUUID(),
+    id: crypto.randomUUID(),
   };
 
   task_arr.push(task_obj);
 
-  console.log("task_arr", task_arr);
+  feedback.textContent = "Opgaven blev tilføjet.";
+
+  // Tømmer tekstfeltet, så det er klar til næste opgave.
+  task_input.value = "";
 
   renderList();
 }
@@ -95,6 +118,7 @@ function renderList() {
       alt="Udendørs opgave"
     >
   `;
+      // viser et lille billed af "udenfor"
     } else {
       taskIcon = `
     <img
@@ -103,6 +127,7 @@ function renderList() {
       alt="Indendørs opgave"
     >
   `;
+      // viser et lille billed af et hus til indendørs opgaver
     }
 
     li.innerHTML = `
@@ -112,11 +137,10 @@ function renderList() {
     <h3>${task.taskTxt}</h3>
     <p>${task.taskDate}</p>
   </div>
-
   <button class="delete_task" type="button">Slet</button>
-
   ${taskIcon}
 `;
+    //delete_task knap til at slette opagven helt
     const checkBox = li.querySelector('[type="checkbox"]');
     const deleteButton = li.querySelector(".delete_task");
 
@@ -131,6 +155,7 @@ function renderList() {
     done_ul_elm.appendChild(li);
   });
 
+  //********************** Rykker de færdige opgaver tilbage til to do listen ************//
   function moveTaskBackToTodo(taskId) {
     // Finder opgaven i Done-arrayet.
     const taskIndex = done_arr.findIndex((task) => task.id === taskId);

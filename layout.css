@@ -89,9 +89,20 @@ header img {
 }
 
 .divider {
-  width: 68px;
-  height: 28px;
-  margin: 12px auto 27px;
+  width: 100%;
+  min-height: 70px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+s #feedback {
+  min-height: 20px;
+  margin: 4px 0 0;
+  color: var(--text-color);
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 /********************* BEGGE OPGAVELISTER To do'en og færdige *********************/

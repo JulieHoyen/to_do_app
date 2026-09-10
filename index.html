@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="layout.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
+    <script type="module" src="./outdoor_pakke/open_meteo/weather_open_meteo.js"></script>
 
     <title>To Do-app</title>
   </head>
@@ -47,10 +48,11 @@
         </form>
 
         <!-- Her kan JavaScript senere vise fejl og andre beskeder. -->
-        <p id="feedback"></p>
       </section>
 
-      <div class="divider"></div>
+      <div class="divider">
+        <p id="feedback"></p>
+      </div>
 
       <!-- Aktive opgaver -->
       <section class="task-section todo-section">
