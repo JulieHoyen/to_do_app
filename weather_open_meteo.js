@@ -8,7 +8,6 @@ export function getWeather(date, callback) {
 function dataLoaded(data) {
   console.log("DATA", data);
   console.log(`WEATHER KODE for dagen: ${Date(data.daily.time[0])} VMO kode: ${data.daily.weathercode[0]}`);
-  //const weatherCode = data.daily.weathercode[0];
   const weatherCode = 63;
   const icon = wwCodes[weatherCode];
   console.log(`${icon}`);

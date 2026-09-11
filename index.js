@@ -19,6 +19,17 @@ function createTask() {
   // Fjerner mellemrum før og efter teksten.
   const taskText = task_input.value.trim();
 
+  const task_obj = {
+    taskTxt: taskText,
+    taskDate: task_date.value,
+    taskOutdoor: task_outdoor.checked,
+    weatherCode: null,
+    weatherIcon: null,
+    taskUnavailable: false,
+    taskDone: false,
+    id: crypto.randomUUID(),
+  };
+
   // Stopper funktionen, hvis tekstfeltet er tomt.
   if (taskText === "") {
     feedback.textContent = "Du skal skrive en opgave først.";
@@ -32,17 +43,6 @@ function createTask() {
     task_date.focus();
     return;
   }
-
-  const task_obj = {
-    taskTxt: taskText,
-    taskDate: task_date.value,
-    taskOutdoor: task_outdoor.checked,
-    weatherCode: null,
-    weatherIcon: null,
-    taskUnavailable: false,
-    taskDone: false,
-    id: crypto.randomUUID(),
-  };
 
   task_arr.push(task_obj);
 
